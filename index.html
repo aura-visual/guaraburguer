@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Guará Burguer | Cardápio</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+
+<body>
+  <!-- Header App -->
+  <div class="header">
+    <div class="topCard">
+      <div class="brand">
+        <img src="logo.guara.jpeg" alt="Guará Burguer">
+        <div style="min-width:0">
+          <div class="title">GUARÁ BURGUER</div>
+          <div class="subtitle" id="statusHint">Seg a Sáb • 17h às 22h</div>
+        </div>
+      </div>
+
+      <div style="display:flex; flex-direction:column; align-items:flex-end; gap:6px;">
+        <div class="statusPill closed" id="statusPill">
+          <span class="dot"></span>
+          <span id="statusText">Estamos fechados</span>
+        </div>
+        <a class="badge" href="admin.html">Admin</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Menu -->
+    <div id="menuRoot"></div>
+
+    <!-- Checkout / Entrega -->
+    <div class="section" id="checkout">
+      <div class="sectionHead">
+        <h2>Entrega</h2>
+        <small>Entrega fixa: R$ 1,00</small>
+      </div>
+
+      <div class="sectionBody">
+        <div class="formGrid">
+          <div class="field">
+            <label>Nome *</label>
+            <input id="nome" placeholder="Ex: João Silva">
+          </div>
+          <div class="field">
+            <label>Referência (opcional)</label>
+            <input id="referencia" placeholder="Ex: Próximo ao hospital">
+          </div>
+        </div>
+
+        <div class="field" style="margin-top:10px;">
+          <label>Endereço *</label>
+          <textarea id="endereco" placeholder="Rua, número, bairro..."></textarea>
+        </div>
+
+        <div class="spacerBottom"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Cart Bar -->
+  <div class="bottomBar">
+    <div class="bottomInner">
+      <div class="cartSummary">
+        <div class="line1" id="bottomLine1">Carrinho vazio</div>
+        <div class="line2" id="bottomLine2">Adicione itens para continuar</div>
+      </div>
+
+      <div class="actions">
+        <button class="btn ghost" id="btnCarrinho">
+          Carrinho <span class="badge" id="cartBadge">0</span>
+        </button>
+        <button class="btn primary" id="btnFinalizar">
+          Finalizar compra <span class="badge" id="bottomCount">0</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Drawer -->
+  <div class="drawerBackdrop" id="drawerBackdrop"></div>
+
+  <div class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawerHeader">
+      <b>Seu carrinho</b>
+      <button class="btn small" id="btnCloseDrawer">Fechar</button>
+    </div>
+    <div class="drawerBody">
+      <div class="cartLines" id="cartLines"></div>
+
+      <div style="margin-top:12px;">
+        <div class="cartLine"><div class="muted">Subtotal</div><div class="muted" id="subtotal">R$ 0,00</div></div>
+        <div class="cartLine"><div class="muted">Entrega</div><div class="muted" id="delivery">R$ 0,00</div></div>
+        <div class="totalRow"><div>Total</div><div id="total">R$ 0,00</div></div>
+      </div>
+
+      <div style="margin-top:12px; display:flex; gap:10px; justify-content:space-between; flex-wrap:wrap;">
+        <button class="btn danger" id="btnLimpar">Limpar carrinho</button>
+        <a class="btn" href="#checkout">Ir para entrega</a>
+      </div>
+
+      <div class="smallNote" style="margin-top:10px;">
+        Horário de atendimento: Segunda a Sábado, 17h às 22h. Fora disso, não finaliza.
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

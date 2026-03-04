@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin | Guará Burguer</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+
+<body>
+  <div class="header">
+    <div class="topCard">
+      <div class="brand">
+        <img src="logo.guara.jpeg" alt="Guará Burguer">
+        <div style="min-width:0">
+          <div class="title">ADMIN • GUARÁ BURGUER</div>
+          <div class="subtitle">Relatório e controle de pedidos</div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <a class="btn" href="index.html">Voltar</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="section">
+      <div class="sectionHead">
+        <h2>Resumo do dia</h2>
+        <small id="dayLabel">—</small>
+      </div>
+      <div class="sectionBody">
+        <div class="items">
+          <div class="item" style="align-items:center;">
+            <div class="left">
+              <div class="name">Pedidos hoje</div>
+              <div class="desc">Total registrados no sistema</div>
+            </div>
+            <div class="price" id="ordersCount">0</div>
+          </div>
+
+          <div class="item" style="align-items:center;">
+            <div class="left">
+              <div class="name">Total vendido hoje</div>
+              <div class="desc">Somatório dos pedidos</div>
+            </div>
+            <div class="price" id="ordersTotal">R$ 0,00</div>
+          </div>
+        </div>
+
+        <div class="hr"></div>
+
+        <div class="footerRow">
+          <button class="btn" id="btnExport">Exportar CSV</button>
+          <button class="btn danger" id="btnClearDay">Apagar pedidos de hoje</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="sectionHead">
+        <h2>Pedidos</h2>
+        <small>Mais recentes primeiro</small>
+      </div>
+      <div class="sectionBody">
+        <div class="items" id="ordersList"></div>
+      </div>
+    </div>
+
+    <div class="spacerBottom"></div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
